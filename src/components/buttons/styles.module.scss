@@ -1,0 +1,27 @@
+@import "../../styles/mixin.module.scss";
+
+.main-button {
+  border: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  &.main-button--primary {
+    color: #ffffff;
+    background-color: $red;
+  }
+  &.main-button--secondary {
+    color: $red;
+    background-color: transparent;
+    border: 1px solid $red;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: $red;
+      color: #ffffff;
+    }
+  }
+  &.small {
+    padding: 8.5px 22px;
+    @include regularText;
+  }
+}

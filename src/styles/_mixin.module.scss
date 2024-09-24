@@ -1,0 +1,26 @@
+@import './variables.module.scss';
+
+@mixin regularText {
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+@mixin title {
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+@mixin container {
+    max-width: 1140px;
+    margin: 0 auto;
+    width: 90%;
+}
+
+@mixin colorTransition {
+    transition: color 0.2s ease;
+    &:hover{
+        color: $red;
+    }
+}

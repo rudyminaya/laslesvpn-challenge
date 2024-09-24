@@ -1,0 +1,151 @@
+@import "../../styles/mixin.module.scss";
+
+.menu {
+  @media (max-width: 767px) {
+    width: 100%;
+    padding: 15px 20px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__toggle-button {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+      position: relative;
+
+      & > div {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 100%;
+        height: 3px;
+        border-radius: 3px;
+        background: #292d32;
+        position: absolute;
+        opacity: 1;
+        transition: background 0.2s ease;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 3px;
+          border-radius: 3px;
+          background: #292d32;
+          top: -6px;
+          transition: 0.2s ease;
+          transition-property: top transform;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 3px;
+          border-radius: 3px;
+          background: #292d32;
+          bottom: -6px;
+          transition: 0.2s ease;
+          transition-property: bottom transform;
+        }
+      }
+    }
+    &__checkbox:checked ~ &__toggle-button {
+      & > div {
+        background: transparent;
+        &::before {
+          top: 0;
+          transform: rotate(45deg);
+        }
+        &::after {
+          bottom: 0;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+    &__options {
+      position: absolute;
+      top: calc(100% + 5px);
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      background-color: #ffffff;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      max-height: 0px;
+      overflow: hidden;
+      transition: max-height 0.5s ease-in-out;
+      width: 100%;
+
+      &__items {
+        display: flex;
+        flex-direction: column;
+        & > a {
+          padding: 10px 20px;
+          border-bottom: 1px solid #e0e0e057;
+        }
+      }
+      &__auth {
+        padding: 10px 20px;
+      }
+    }
+    &__checkbox:checked ~ &__options {
+      max-height: 500px;
+    }
+  }
+
+  &__item {
+    @include regularText;
+  }
+
+  &__checkbox {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    @include container;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+
+    &__logo {
+      display: flex;
+      align-items: center;
+      width: 30%;
+    }
+
+    &__options {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      &__items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 50%;
+        & > a {
+          padding: 10px 20px;
+          @include colorTransition;
+        }
+      }
+
+      &__auth {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        & > a {
+          margin-right: 10px;
+          @include colorTransition;
+          
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
