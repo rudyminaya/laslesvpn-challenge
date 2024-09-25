@@ -1,11 +1,57 @@
-import React from "react"
+"use client"
+import React, { useEffect, useState } from "react"
 import styles from "./styles.module.scss"
 import { Logo } from "../icons"
 import Link from "next/link"
 import { MenuItems } from "@/data/menu"
 import { MainButton } from "../buttons"
 
+const MenuLinks = () => (
+  <div className={styles.menu__options__items}>
+    {MenuItems.map((item, index) => (
+      <Link key={index} href={item.url}>
+        {item.title}
+      </Link>
+    ))}
+  </div>
+)
+
+const AuthLinks = () => (
+  <div className={styles.menu__options__auth}>
+    <Link href="#signin" className={styles["menu__options__auth--signin"]}>
+      Sign in
+    </Link>
+    <MainButton
+      className={styles["menu__options__auth--signup"]}
+      text="Sign up"
+      variant="secondary"
+      link="#signup"
+      size="small"
+    />
+  </div>
+)
+
+const MenuNavItems = () => (
+  <>
+    <MenuLinks />
+    <AuthLinks />
+  </>
+)
+
 const Menu = () => {
+  const [isMobile, setIsMobile] = useState<boolean>(false)
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 919)
+    }
+
+    handleResize()
+
+    window.addEventListener("resize", handleResize)
+
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
+
   return (
     <header className={styles.container}>
       <nav className={styles.menu}>
@@ -21,32 +67,13 @@ const Menu = () => {
         <label htmlFor="menu__toggle" className={styles["menu__toggle-button"]}>
           <div></div>
         </label>
-        <div className={styles.menu__options}>
-          <div className={styles.menu__options__items}>
-            {MenuItems.map((item, index) => {
-              return (
-                <Link key={index} href={item.url}>
-                  {item.title}
-                </Link>
-              )
-            })}
+        {isMobile ? (
+          <div className={styles.menu__options}>
+            <MenuNavItems />
           </div>
-          <div className={styles.menu__options__auth}>
-            <Link
-              href="#signin"
-              className={styles["menu__options__auth--signin"]}
-            >
-              Sign in
-            </Link>
-            <MainButton
-              className={styles["menu__options__auth--signup"]}
-              text="Sign up"
-              variant="secondary"
-              link="#signup"
-              size="small"
-            />
-          </div>
-        </div>
+        ) : (
+          <MenuNavItems />
+        )}
       </nav>
     </header>
   )

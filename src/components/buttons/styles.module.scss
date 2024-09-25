@@ -4,15 +4,22 @@
   border: transparent;
   background-color: transparent;
   cursor: pointer;
+  border-radius: 20px;
+
   &.main-button--primary {
     color: #ffffff;
     background-color: $red;
+    transition: all 0.2s ease;
+
+    &:hover {
+      opacity: 0.9;
+    }
   }
+
   &.main-button--secondary {
     color: $red;
     background-color: transparent;
     border: 1px solid $red;
-    border-radius: 20px;
     transition: all 0.2s ease;
 
     &:hover {
@@ -20,8 +27,18 @@
       color: #ffffff;
     }
   }
+
   &.small {
     padding: 8.5px 22px;
     @include regularText;
+  }
+  &.large {
+    padding: 16.5px 45.5px;
+    @include mediumText;
+    @media (max-width: 767px) {
+      padding: 10px 29px;
+      font-size: 12px;
+      border-radius: 13px;
+    }
   }
 }

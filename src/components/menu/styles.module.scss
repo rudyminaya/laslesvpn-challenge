@@ -1,7 +1,7 @@
 @import "../../styles/mixin.module.scss";
 
 .menu {
-  @media (max-width: 767px) {
+  @media (max-width: 919px) {
     width: 100%;
     padding: 15px 20px;
     position: relative;
@@ -91,6 +91,8 @@
       }
       &__auth {
         padding: 10px 20px;
+        display: flex;
+        justify-content: flex-end;
       }
     }
     &__checkbox:checked ~ &__options {
@@ -106,25 +108,39 @@
     display: none;
   }
 
-  @media (min-width: 768px) {
+  &__options {
+    &__auth {
+      &--signin {
+        padding: 8.5px 22px;
+      }
+      & > a {
+        margin-right: 10px;
+        @include colorTransition;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 920px) {
     @include container;
     display: flex;
-    justify-content: space-between;
     padding: 30px 0;
+    justify-content: space-between;
 
     &__logo {
-      display: flex;
-      align-items: center;
-      width: 30%;
+      @include logo;
     }
 
     &__options {
       display: flex;
-      justify-content: space-between;
       width: 100%;
+      justify-content: space-between;
       &__items {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         width: 50%;
         & > a {
@@ -137,14 +153,6 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        & > a {
-          margin-right: 10px;
-          @include colorTransition;
-          
-          &:last-child {
-            margin-right: 0;
-          }
-        }
       }
     }
   }
