@@ -1,5 +1,5 @@
 import { LocationIcon, ServerIcon, UserIcon } from "@/components/icons"
-import { FeatureItemTypes, MenuItemsTypes } from "@/types"
+import { MetricItemTypes, MenuItemsTypes } from "@/types"
 
 export const MenuItems: MenuItemsTypes[] = [
   {
@@ -20,7 +20,7 @@ export const MenuItems: MenuItemsTypes[] = [
   },
 ]
 
-export const FeatureItems: FeatureItemTypes[] = [
+export const MetricsItems: MetricItemTypes[] = [
   {
     icon: <UserIcon />,
     quantity: 90,
@@ -36,4 +36,11 @@ export const FeatureItems: FeatureItemTypes[] = [
     quantity: 50,
     description: "Servers",
   },
+]
+
+export const FeaturesItems: string[] = [
+  "Powerfull online protection.",
+  "Internet without borders.",
+  "Supercharged VPN",
+  "No specific time limits.",
 ]

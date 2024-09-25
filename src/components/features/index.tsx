@@ -1,24 +1,37 @@
-import { FeatureItemTypes } from "@/types"
+/* eslint-disable @next/next/no-img-element */
 import React from "react"
 import styles from "./styles.module.scss"
-import Feature from "./feature"
+import { CheckIcon } from "../icons"
 
-type FeaturesProps = {
-  data: FeatureItemTypes[]
+type Props = {
+  data: string[]
 }
 
-const Features = ({ data }: FeaturesProps) => {
+const Features = ({ data }: Props) => {
   return (
     <section className={styles.container}>
       <div className={styles.features}>
-        {data.map((feature, index) => {
-          return (
-            <Feature
-              key={`${feature.description.trim()}-${index}`}
-              {...feature}
-            />
-          )
-        })}
+        <img
+          src="/assets/features-guy.png"
+          alt="Guy with a laptop showing features"
+          loading="lazy"
+        />
+        <div className={styles.features__details}>
+          <h5>We provide many features you can use</h5>
+          <p>
+            Lorem ipsum dolor sit amet consectetur. Quis tortor gravida nibh
+            arcu id purus ullamcorper. Vel vel erat semper augue.
+          </p>
+          <ul className={styles.features__details__list}>
+            {data.map((feature, index) => {
+              return (
+                <li key={index}>
+                  <CheckIcon /> {feature}
+                </li>
+              )
+            })}
+          </ul>
+        </div>
       </div>
     </section>
   )

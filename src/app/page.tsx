@@ -1,7 +1,8 @@
-import Features from "@/components/features"
+import Metrics from "@/components/metrics"
 import styles from "./page.module.scss"
 import { MainButton } from "@/components/buttons"
-import { FeatureItems } from "@/data/menu"
+import { FeaturesItems, MetricsItems } from "@/data"
+import Features from "@/components/features"
 
 export default function Home() {
   return (
@@ -28,7 +29,8 @@ export default function Home() {
           alt="Community manager working on their laptop"
         />
       </main>
-      <Features data={FeatureItems} />
+      <Metrics data={MetricsItems} />
+      <Features data={FeaturesItems}/>
     </>
   )
 }

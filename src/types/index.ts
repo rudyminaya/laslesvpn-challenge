@@ -3,7 +3,7 @@ export type MenuItemsTypes = {
     url: string;
 }
 
-export type FeatureItemTypes = {
+export type MetricItemTypes = {
     icon: React.ReactNode;
     quantity: number;
     description: string;

@@ -1,0 +1,29 @@
+.container {
+  padding: 0 22px;
+  margin: 60px 0;
+}
+.metrics {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 820px;
+  padding: 38px 48.5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 7px 13px 35px rgba(0, 0, 0, 0.09);
+  border-radius: 20px;
+
+  & > div {
+    border-right: 1px solid #e0e0e0;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  @media (max-width: 767px) {
+    padding: 20px 16px;
+    box-shadow: 4px 7px 19.8px rgba(0, 0, 0, 0.09);
+    border-radius: 11px;
+  }
+}

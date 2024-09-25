@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 import styles from "./styles.module.scss"
 import { Logo } from "../icons"
 import Link from "next/link"
-import { MenuItems } from "@/data/menu"
+import { MenuItems } from "@/data"
 import { MainButton } from "../buttons"
 
 const MenuLinks = () => (
