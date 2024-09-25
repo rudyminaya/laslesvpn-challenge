@@ -2,14 +2,13 @@
 import { PlanItemTypes } from "@/types"
 import React, { useState } from "react"
 import styles from "./styles.module.scss"
-import Plan from "./item"
+import Plan from "../../components/plan"
 
 type Props = {
   data: PlanItemTypes[]
 }
 
 const Prices = ({ data }: Props) => {
-  //quiero que muestre el plan más caro por defecto
   const [activePlan, setActivePlan] = useState(
     data.find(
       (plan) => plan.price === Math.max(...data.map((plan) => plan.price))

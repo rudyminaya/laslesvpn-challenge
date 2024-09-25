@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-import Metrics from "@/components/metrics"
+import Metrics from "@/sections/metrics"
 import styles from "./page.module.scss"
 import { MainButton } from "@/components/buttons"
 import { FeaturesItems, MetricsItems, PlanItems } from "@/data"
 import Features from "@/components/features"
-import Prices from "@/components/prices"
+import Prices from "@/sections/prices"
 
 export default function Home() {
   return (

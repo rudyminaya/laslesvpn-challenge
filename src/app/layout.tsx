@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import "./globals.css"
-import Menu from "@/components/menu"
+import Menu from "@/sections/menu"
 
 export const metadata: Metadata = {
   title: "LaslesVPN",

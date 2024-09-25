@@ -1,7 +1,7 @@
 import { MetricItemTypes } from "@/types"
 import React from "react"
 import styles from "./styles.module.scss"
-import Metric from "./item"
+import Metric from "../../components/metric"
 
 type MetricsProps = {
   data: MetricItemTypes[]

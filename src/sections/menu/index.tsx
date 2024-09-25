@@ -1,10 +1,10 @@
 "use client"
 import React, { useEffect, useState } from "react"
 import styles from "./styles.module.scss"
-import { Logo } from "../icons"
+import { Logo } from "../../components/icons"
 import Link from "next/link"
 import { MenuItems } from "@/data"
-import { MainButton } from "../buttons"
+import { MainButton } from "../../components/buttons"
 
 const MenuLinks = () => (
   <div className={styles.menu__options__items}>
