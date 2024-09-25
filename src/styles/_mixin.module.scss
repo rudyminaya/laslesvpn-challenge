@@ -1,40 +1,44 @@
-@import './variables.module.scss';
+@import "./variables.module.scss";
 
 @mixin regularText {
-    font-family: 'Rubik', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 @mixin mediumText {
-    font-family: 'Rubik', sans-serif;
-    font-size: 18px;
-    font-weight: 500;
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 @mixin title {
-    font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+
+  @media (min-width: 768px) {
     font-size: 20px;
-    font-weight: 500;
+  }
 }
 
 @mixin container {
-    max-width: 1140px;
-    margin: 0 auto;
-    width: 90%;
+  max-width: 1140px;
+  margin: 0 auto;
+  width: 90%;
 }
 
 @mixin colorTransition {
-    transition: color 0.2s ease;
-    &:hover{
-        color: $red;
-    }
+  transition: color 0.2s ease;
+  &:hover {
+    color: $red;
+  }
 }
 
 @mixin logo {
-    display: flex;
-    align-items: center;    
-    & > svg {
-        margin-right: 11px;
-    }
+  display: flex;
+  align-items: center;
+  & > svg {
+    margin-right: 11px;
+  }
 }
