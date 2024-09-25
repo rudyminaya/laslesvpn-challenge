@@ -1,5 +1,5 @@
 import { LocationIcon, ServerIcon, UserIcon } from "@/components/icons"
-import { MetricItemTypes, MenuItemsTypes } from "@/types"
+import { MetricItemTypes, MenuItemsTypes, PlanItemTypes } from "@/types"
 
 export const MenuItems: MenuItemsTypes[] = [
   {
@@ -43,4 +43,39 @@ export const FeaturesItems: string[] = [
   "Internet without borders.",
   "Supercharged VPN",
   "No specific time limits.",
+]
+
+export const PlanItems: PlanItemTypes[] = [
+  {
+    title: "Free",
+    price: 0,
+    features: [
+      "Unlimited Bandwitch",
+      "Encrypted Connection",
+      "Yes Traffic Logs",
+    ],
+  },
+  {
+    title: "Standard Plan",
+    price: 9,
+    features: [
+      "Unlimited Bandwitch",
+      "Encrypted Connection",
+      "Yes Traffic Logs",
+      "Works on All Devices",
+      "Connect Anyware",
+    ],
+  },
+  {
+    title: "Premium Plan",
+    price: 12,
+    features: [
+      "Unlimited Bandwitch",
+      "Encrypted Connection",
+      "Yes Traffic Logs",
+      "Works on All Devices",
+      "Connect Anyware",
+      "Get New Features",
+    ],
+  },
 ]

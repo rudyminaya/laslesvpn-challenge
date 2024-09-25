@@ -8,3 +8,9 @@ export type MetricItemTypes = {
     quantity: number;
     description: string;
 }
+
+export type PlanItemTypes = {
+    title: string;
+    price: number;
+    features: string[];
+}

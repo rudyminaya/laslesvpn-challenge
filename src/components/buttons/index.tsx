@@ -22,7 +22,12 @@ export const MainButton = ({
   if (link) {
     return (
       <Link href={link}>
-        <button className={`${styles["main-button"]} ${styles[`main-button--${variant}`]} ${styles[size]} ${className ?? ''}`}>
+        <button className={[
+          styles["main-button"],
+          styles[`main-button--${variant}`],
+          styles[size],
+          className
+        ].filter(Boolean).join(' ')}>
           {text}
         </button>
       </Link>
@@ -31,7 +36,12 @@ export const MainButton = ({
   return (
     <button
       onClick={onClick}
-      className={`${styles["main-button"]} ${styles[`main-button--${variant}`]} ${styles[size]} ${className ?? ''}`}
+      className={[
+        styles["main-button"],
+        styles[`main-button--${variant}`],
+        styles[size],
+        className
+      ].filter(Boolean).join(' ')}
     >
       {text}
     </button>

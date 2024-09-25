@@ -41,4 +41,13 @@
       border-radius: 13px;
     }
   }
+  &.medium {
+    padding: 6px 30px;
+    font-size: 11px;
+
+    @media(min-width: 768px) {
+      padding: 10.5px 55.5px;
+      font-size: 20px;
+    }
+  }
 }
