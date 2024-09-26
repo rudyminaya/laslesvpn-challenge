@@ -4,7 +4,6 @@ import {
   MenuItemsTypes,
   PlanItemTypes,
   TestimonialItemsTypes,
-  SeoLinksType,
   FooterLinksTypes,
 } from "@/types"
 
