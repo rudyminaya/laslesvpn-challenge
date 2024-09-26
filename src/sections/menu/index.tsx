@@ -1,10 +1,10 @@
 "use client"
 import React, { useEffect, useState } from "react"
 import styles from "./styles.module.scss"
-import { Logo } from "../../components/icons"
 import Link from "next/link"
 import { MenuItems } from "@/data"
 import { MainButton } from "../../components/buttons"
+import LaslesLogo from "@/components/logo"
 
 const MenuLinks = () => (
   <div className={styles.menu__options__items}>
@@ -18,14 +18,14 @@ const MenuLinks = () => (
 
 const AuthLinks = () => (
   <div className={styles.menu__options__auth}>
-    <Link href="#signin" className={styles["menu__options__auth--signin"]}>
+    <Link href="#" className={styles["menu__options__auth--signin"]}>
       Sign in
     </Link>
     <MainButton
       className={styles["menu__options__auth--signup"]}
       text="Sign up"
       variant="secondary"
-      link="#signup"
+      link="#"
       size="small"
     />
   </div>
@@ -40,25 +40,45 @@ const MenuNavItems = () => (
 
 const Menu = () => {
   const [isMobile, setIsMobile] = useState<boolean>(false)
+  const [isSticky, setIsSticky] = useState<boolean>(true)
+  const [lastScrollTop, setLastScrollTop] = useState<number>(0)
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 919)
     }
 
+    const handleScroll = () => {
+      const currentScroll = window.scrollY || document.documentElement.scrollTop
+
+      if (currentScroll > lastScrollTop) {
+        setIsSticky(false)
+      } else if (currentScroll <= 0) {
+        setIsSticky(true)
+      } else if (currentScroll < lastScrollTop) {
+        setIsSticky(true)
+      }
+
+      setLastScrollTop(currentScroll <= 0 ? 0 : currentScroll)
+    }
+
     handleResize()
-
     window.addEventListener("resize", handleResize)
+    window.addEventListener("scroll", handleScroll)
 
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
+    return () => {
+      window.removeEventListener("resize", handleResize)
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [lastScrollTop])
 
   return (
-    <header className={styles.container}>
+    <header
+      className={[styles.container, !isSticky ? styles.hidden : ""].join(" ")}
+      style={{ position: isSticky ? "sticky" : "relative" }}
+    >
       <nav className={styles.menu}>
-        <div className={styles.menu__logo}>
-          <Logo />
-          Lasles<b>VPN</b>
-        </div>
+        <LaslesLogo />
         <input
           type="checkbox"
           className={styles.menu__checkbox}

@@ -1,5 +1,12 @@
 import { LocationIcon, ServerIcon, UserIcon } from "@/components/icons"
-import { MetricItemTypes, MenuItemsTypes, PlanItemTypes, TestimonialItemsTypes } from "@/types"
+import {
+  MetricItemTypes,
+  MenuItemsTypes,
+  PlanItemTypes,
+  TestimonialItemsTypes,
+  SeoLinksType,
+  FooterLinksTypes,
+} from "@/types"
 
 export const MenuItems: MenuItemsTypes[] = [
   {
@@ -16,7 +23,7 @@ export const MenuItems: MenuItemsTypes[] = [
   },
   {
     title: "Help",
-    url: "#help",
+    url: "#",
   },
 ]
 
@@ -136,3 +143,68 @@ export const TestimonialsItems: TestimonialItemsTypes[] = [
     stars: 4.5,
   },
 ]
+
+export const SeoLinks: FooterLinksTypes = {
+  Product: [
+    {
+      name: "Download",
+      url: "/download",
+    },
+    {
+      name: "Pricing",
+      url: "/pricing",
+    },
+    {
+      name: "Locations",
+      url: "/locations",
+    },
+    {
+      name: "Server",
+      url: "/server",
+    },
+    {
+      name: "Countries",
+      url: "/countries",
+    },
+    {
+      name: "Blog",
+      url: "/blog",
+    },
+  ],
+  Engage: [
+    {
+      name: "LaslesVPN ?",
+      url: "/laslesvpn",
+    },
+    {
+      name: "FAQ",
+      url: "/faq",
+    },
+    {
+      name: "Tutorials",
+      url: "/tutorials",
+    },
+    {
+      name: "About Us",
+      url: "/about-us",
+    },
+    {
+      name: "Privacy Policy",
+      url: "/privacy-policy",
+    },
+    {
+      name: "Terms of Service",
+      url: "/terms-of-service",
+    },
+  ],
+  "Earn Money": [
+    {
+      name: "Become Partner",
+      url: "/become-partner",
+    },
+    {
+      name: "Affiliate",
+      url: "/affiliate",
+    },
+  ],
+}

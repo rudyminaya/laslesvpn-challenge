@@ -6,9 +6,10 @@ import Plan from "../../components/plan"
 
 type Props = {
   data: PlanItemTypes[]
+  id: string
 }
 
-const Prices = ({ data }: Props) => {
+const Prices = ({ data, id }: Props) => {
   
   const [activePlan, setActivePlan] = useState<number>(
     data.find(
@@ -26,7 +27,7 @@ const Prices = ({ data }: Props) => {
   }, []);
 
   return (
-    <section className={styles.container}>
+    <section id={id} className={styles.container}>
       <div className={styles.prices}>
         <h5>Choose your plan</h5>
         <p>

@@ -17,17 +17,21 @@ export const MainButton = ({
   text,
   variant,
   className,
-  size = "medium"
+  size = "medium",
 }: ButtonProps) => {
   if (link) {
     return (
       <Link href={link}>
-        <button className={[
-          styles["main-button"],
-          styles[`main-button--${variant}`],
-          styles[size],
-          className
-        ].filter(Boolean).join(' ')}>
+        <button
+          className={[
+            styles["main-button"],
+            styles[`main-button--${variant}`],
+            styles[size],
+            className,
+          ]
+            .filter(Boolean)
+            .join(" ")}
+        >
           {text}
         </button>
       </Link>
@@ -40,8 +44,10 @@ export const MainButton = ({
         styles["main-button"],
         styles[`main-button--${variant}`],
         styles[size],
-        className
-      ].filter(Boolean).join(' ')}
+        className,
+      ]
+        .filter(Boolean)
+        .join(" ")}
     >
       {text}
     </button>

@@ -1,6 +1,5 @@
 import React from "react"
 import styles from "./styles.module.scss"
-import { MainButton } from "@/components/buttons"
 
 const Suscription = () => {
   return (

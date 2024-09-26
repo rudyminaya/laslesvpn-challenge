@@ -1,25 +1,37 @@
 export type MenuItemsTypes = {
-    title: string;
-    url: string;
+  title: string
+  url: string
 }
 
 export type MetricItemTypes = {
-    icon: React.ReactNode;
-    quantity: number;
-    description: string;
+  icon: React.ReactNode
+  quantity: number
+  description: string
 }
 
 export type PlanItemTypes = {
-    title: string;
-    price: number;
-    features: string[];
+  title: string
+  price: number
+  features: string[]
 }
 
 export type TestimonialItemsTypes = {
-    id: number
+  id: number
+  name: string
+  job: string
+  description: string
+  photo: string
+  stars: number
+}
+
+export type SeoLinksType = {
     name: string
-    job: string
-    description: string
-    photo: string
-    stars: number
-  }
+    url: string
+}
+
+export type FooterLinksTypes = {
+    Product: SeoLinksType[]
+    Engage: SeoLinksType[]
+    "Earn Money": SeoLinksType[]
+
+}

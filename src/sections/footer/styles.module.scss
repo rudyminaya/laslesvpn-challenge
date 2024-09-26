@@ -1,0 +1,75 @@
+@import "../../styles/variables.module.scss";
+
+.footer {
+  background-color: $light-gray;
+  padding: 33px 28px;
+
+  &__content {
+    display: flex;
+    flex-direction: column-reverse;
+
+    &--info {
+      text-align: center;
+
+      & > p {
+        margin-bottom: 25px;
+      }
+
+      & > div {
+        display: flex;
+        justify-content: center;
+
+        &:first-child {
+          margin-bottom: 23px;
+          margin-top: 51px;
+        }
+
+        &:last-child {
+          & > a {
+            margin-right: 20px;
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+    &--links {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+  @media (min-width: 768px) {
+    padding: 93px 0;
+
+    &__content {
+      flex-direction: row;
+      justify-content: space-around;
+
+      &--info {
+        max-width: 337px;
+        text-align: left;
+
+        & > div {
+          display: block;
+
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+      &--links {
+        max-width: 490px;
+
+        & > div {
+          margin-right: 93px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

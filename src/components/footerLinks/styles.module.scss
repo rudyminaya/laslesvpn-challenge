@@ -1,0 +1,36 @@
+@import '../../styles/variables.module';
+
+.footerlinks {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font-size: 13.4px;
+    font-weight: 500;
+    margin-bottom: 16.75px;
+  }
+
+  &__link {
+    font-size: 12.5px;
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  @media(min-width:768px){
+    &__title{
+        font-size: 16px;
+    }
+
+    &__link{
+        font-size: 15px;
+        transition: color 0.3s ease;
+        
+        &:hover{
+          color:$red;
+        }
+    }
+  }
+}

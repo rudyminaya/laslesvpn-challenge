@@ -9,6 +9,7 @@
   box-shadow: 12px 18px 54px rgb(0 0 0 / 11%);
   padding: 46px 48.5px;
   align-items: center;
+  background-color: #ffffff;
 
   &__content {
     
@@ -44,6 +45,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 42.5px 40px;
+    margin-bottom: -20px;
+    position: relative;
+    z-index: 2;
 
     &__content {
       max-width: 251px;

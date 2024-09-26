@@ -5,11 +5,12 @@ import { CheckIcon } from "../icons"
 
 type Props = {
   data: string[]
+  id: string
 }
 
-const Features = ({ data }: Props) => {
+const Features = ({ data, id }: Props) => {
   return (
-    <section className={styles.container}>
+    <section id={id} className={styles.container}>
       <div className={styles.features}>
         <img
           src="/assets/features-guy.png"

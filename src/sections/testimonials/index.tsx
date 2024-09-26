@@ -12,9 +12,10 @@ import SlideItem from "@/components/slideItem"
 
 type Props = {
   data: TestimonialItemsTypes[]
+  id:string
 }
 
-const Testimonials = ({ data }: Props) => {
+const Testimonials = ({ data, id }: Props) => {
   const [selectedSlide, setSelectedSlide] = useState<number>(1)
   const [currentPage, setCurrentPage] = useState<number>(0)
   const bulletsRef = useRef<HTMLDivElement>(null)
@@ -40,7 +41,7 @@ const Testimonials = ({ data }: Props) => {
   }, [])
 
   return (
-    <section className={styles.container}>
+    <section id={id} className={styles.container}>
       <div className={styles.testimonials}>
         <h5>Trusted by thousands of happy customers</h5>
         <p>
