@@ -6,6 +6,7 @@ import { FeaturesItems, MetricsItems, PlanItems, TestimonialsItems } from "@/dat
 import Features from "@/components/features"
 import Prices from "@/sections/prices"
 import Testimonials from "@/sections/testimonials"
+import Suscription from "@/sections/suscription"
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
       <Features data={FeaturesItems}/>
       <Prices data={PlanItems}/>
       <Testimonials data={TestimonialsItems}/>
+      <Suscription/>
     </>
   )
 }
