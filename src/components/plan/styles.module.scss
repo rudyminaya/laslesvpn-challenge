@@ -10,6 +10,7 @@
   flex-direction: column;
   transition: all 0.2s ease-in-out;
   min-width: 176px;
+  cursor: pointer;
 
   &__title {
     @include subtitle;
@@ -18,7 +19,7 @@
   }
 
   &--active {
-    border-color: $red;
+    border-color: $red;    
   }
 
   &:last-child {
@@ -76,6 +77,10 @@
     border-radius: 20px;
     margin-right: 29px;
     border-width: 2px;
+    
+    &:not(&--active):hover {
+      border-color: $red2;
+    }
 
     & > img {
       margin-bottom: 22px;

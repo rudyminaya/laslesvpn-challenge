@@ -2,9 +2,10 @@
 import Metrics from "@/sections/metrics"
 import styles from "./page.module.scss"
 import { MainButton } from "@/components/buttons"
-import { FeaturesItems, MetricsItems, PlanItems } from "@/data"
+import { FeaturesItems, MetricsItems, PlanItems, TestimonialsItems } from "@/data"
 import Features from "@/components/features"
 import Prices from "@/sections/prices"
+import Testimonials from "@/sections/testimonials"
 
 export default function Home() {
   return (
@@ -34,6 +35,7 @@ export default function Home() {
       <Metrics data={MetricsItems} />
       <Features data={FeaturesItems}/>
       <Prices data={PlanItems}/>
+      <Testimonials data={TestimonialsItems}/>
     </>
   )
 }

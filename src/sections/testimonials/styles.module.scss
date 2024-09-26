@@ -1,0 +1,67 @@
+@import "../../styles/mixin.module.scss";
+.container {
+  padding: 0 17px;
+  margin-top: 50.5px;
+  position: relative;
+}
+
+.testimonials {
+  text-align: center;
+  position: relative;
+
+  &__cards {
+    margin-top: 47px;
+
+    &__item {
+      max-width: 258px;
+    }
+  }
+
+  & > h5 {
+    font-size: 17px;
+    margin-bottom: 9px;
+  }
+
+  & > p {
+    font-size: 9px;
+  }
+  &__controls{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    @include container;
+    max-width: 1248px;
+
+    &--navigation {
+      max-width: 132px;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  @media (min-width: 768px) {
+    max-width: 1248px;
+    margin: 104px auto 0;
+    padding: 0 0 72px;    
+    width: 90%;    
+
+    & > h5 {
+      margin-bottom: 16px;
+      font-size: 30px;
+    }
+    
+    & > p {
+      font-size: 16px;
+    }
+
+    &__cards {
+      margin-top: 57px;
+
+      &__item{
+        max-width: 404px;
+      }
+    }
+  }
+}

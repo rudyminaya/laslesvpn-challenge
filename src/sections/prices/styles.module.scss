@@ -46,7 +46,6 @@
   display: flex;
   overflow-x: scroll;
   position: relative;
-  justify-content: center;
   width: 100%;
   padding: 10px;
   scrollbar-width: thin;
@@ -58,8 +57,10 @@
   &__items {
     margin-top: 18px;
     display: flex;
+    
   }
   @media (min-width: 768px) {
+    scrollbar-width: none;
     &__items {
       margin-top: 40px;
     }

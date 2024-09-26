@@ -14,3 +14,12 @@ export type PlanItemTypes = {
     price: number;
     features: string[];
 }
+
+export type TestimonialItemsTypes = {
+    id: number
+    name: string
+    job: string
+    description: string
+    photo: string
+    stars: number
+  }
