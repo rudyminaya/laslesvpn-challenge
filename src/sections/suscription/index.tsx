@@ -6,15 +6,14 @@ const Suscription = () => {
   return (
     <aside className={styles.suscription}>
       <div className={styles.suscription__content}>
-        <h2>Subscribe now for get special features!</h2>
-        <p>Lorem ipsum dolor sit amet</p>
+        <h2 className={styles.suscription__content__title}>
+          Subscribe now for get special features!
+        </h2>
+        <p className={styles.suscription__content__description}>
+          Lorem ipsum dolor sit amet
+        </p>
       </div>
-      <MainButton
-        size="large"
-        text="Subscribe now"
-        variant="primary"
-        link="#"
-      />
+      <button className={styles.suscription__button}>Subscribe now</button>
     </aside>
   )
 }

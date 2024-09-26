@@ -1,0 +1,59 @@
+@import "../../styles/variables.module.scss";
+
+.suscription {
+  display: flex;
+  margin: 104px auto 0;
+  width: 95%;
+  max-width: 1146px;
+  border-radius: 20px;
+  box-shadow: 12px 18px 54px rgb(0 0 0 / 11%);
+  padding: 46px 48.5px;
+  align-items: center;
+
+  &__content {
+    
+    &__title {
+      font-size: 25px;
+      font-weight: 500;
+      margin-bottom: 17px;
+    }
+  }
+
+  &__button {
+    border: 1px solid transparent;
+    background-color: $red;
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 18px 57px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 767px) {
+    margin-top: 58px;
+    flex-direction: column;
+
+    &__content {
+      margin-bottom: 64px;
+      text-align: center;
+    }
+  }
+
+  @media (min-width: 768px) {
+    justify-content: space-between;
+    align-items: center;
+    padding: 42.5px 40px;
+
+    &__content {
+      max-width: 251px;
+    }
+
+    &__button {
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+}
